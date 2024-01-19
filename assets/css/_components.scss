@@ -1,0 +1,30 @@
+@each $size in $fs {
+    .fs-#{$size} {
+        font-size: #{$size}px;
+    }
+}
+@each $weight in $fw {
+    .fw-#{$weight} {
+        font-weight: $weight;
+    }
+}
+@each $name, $color1, $color2 in $colors {
+    .btn-#{$name} {
+        background-color: $color1 !important;
+        color: $color2 !important;
+        padding: 0.75rem 1.5rem;
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: $color1 !important;
+            color: $color2 !important;
+        }
+    }
+    .bg-#{$name}{
+        background-color: $color1 !important;
+        color: $color2 !important;
+    }
+    .text-#{$name} {
+        color: $color1 !important;
+    }
+}

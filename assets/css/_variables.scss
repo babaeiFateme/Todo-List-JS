@@ -1,0 +1,16 @@
+:root {
+    --clr-primary:#609FFF;
+    --clr-black: #000000;
+    --clr-white: #ffffff;
+    --clr-min-gray: #333;
+    --clr-light-gray: #999;
+    --clr-vLight-gray: #f7f7f7;
+}
+
+$colors: (
+    "primary" var(--clr-primary) var(--clr-white),
+);
+
+
+$fs: (13, 14, 15, 16, 17, 18, 20, 22, 24);
+$fw: (100, 200, 300, 400, 500, 600, 700, 800);
