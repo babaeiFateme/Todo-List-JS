@@ -21,6 +21,18 @@ main {
     .header-box {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        .filter{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            button{
+                background-color: unset;
+                border: unset;
+                cursor: pointer;
+            }
+        }
     }
 
     .add-btn {
