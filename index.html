@@ -22,37 +22,27 @@
             </div>
         </div>
         <ul class="todos-list">
-            <li class="todo-item">
-                <div class="title">
-                    <span class="fs-18">Todo Title</span>
-                </div>
-                <div class="actions">
-                    <button class="btn">
-                        <i class="fas fa-edit fs-18"></i>
-                    </button>
-                    <button class="btn">
-                        <i class="fas fa-trash fs-18"></i>
-                    </button>
-                </div>
-            </li>
+            <!-- todo item -->
         </ul>
-        <form class="todo-form">
-            <input class="todo-input" type="text" placeholder="add to do">
-            <button type="submit">add</button>
-            <button type="button">cancel</button>
-        </form>
 
-       
+        <!-- add modal -->
+        <div class="add-modal modal hidden">
+            <h3>New Todo</h3>
+            <div class="subtitle">Please write contentof todo in input below!</div>
+            <form class="todo-form">
+                <input class="todo-input" type="text" placeholder="add to do">
+                <div class="actions">
+                    <button class="btn" type="submit">add</button>
+                    <button class="btn close-btn" type="button">cancel</button>
+                </div>
+            </form>
+        </div>
 
+        <!-- add modal -->
+
+        <button class="add-btn bg-primary"><i class="fas fa-plus"></i></button>
+        <div class="overlay hidden"></div>
     </main>
-
-
-
-
-
-
-
-
     <script src="./assets/vendor/fontawsome/fontawesome.min.js"></script>
     <script src="./assets/js/app.js"></script>
 </body>

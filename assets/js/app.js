@@ -1,19 +1,31 @@
 const todoForm = document.querySelector(".todo-form");
 const todoInput = document.querySelector(".todo-input");
 const todoList = document.querySelector(".todos-list");
-const filterList = document.querySelector(".filter");
 const allTaskBtn = document.querySelector(".all-task-btn");
 const compeleteBtn = document.querySelector(".compelete-btn");
+const addBtn = document.querySelector(".add-btn");
+const closeBtn = document.querySelector(".close-btn");
+const addModal = document.querySelector(".add-modal");
+const overlay = document.querySelector(".overlay");
 let todos = [];
+
+addBtn.addEventListener("click", () => {
+    addModal.classList.remove("hidden");
+    overlay.classList.remove("hidden");
+});
+closeBtn.addEventListener("click", () => {
+    addModal.classList.add("hidden");
+    overlay.classList.add("hidden");
+});
 
 function newTodo(e) {
     e.preventDefault();
-
     let newTodoItem = {
         id: Date.now(),
         title: todoInput.value,
         isComplete: false,
     };
+
     todos.push(newTodoItem);
     addList(todos);
     todoInput.value = "";
@@ -36,9 +48,6 @@ function addList(todos) {
             todo.id
         })"><i class="fas fa-trash fs-18"></i>
             </button>
-
-
-
             <button class="btn">
             <i class="fas fa-edit fs-18"></i>
             </button>
@@ -52,7 +61,6 @@ function addList(todos) {
 }
 
 function filterdTodos(str) {
-    console.log(str);
     if (str == "all") {
         addList(todos);
     } else if (str == "compelete") {
