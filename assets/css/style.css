@@ -181,6 +181,8 @@ main .add-btn {
 }
 main .todos-list {
   padding: 20px;
+  max-height: 500px;
+  overflow: auto;
 }
 main .todos-list .todo-item {
   padding: 10px;
