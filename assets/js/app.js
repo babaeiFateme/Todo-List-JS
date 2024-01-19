@@ -9,6 +9,13 @@ const addModal = document.querySelector(".add-modal");
 const overlay = document.querySelector(".overlay");
 let todos = [];
 
+
+const storedTodos = JSON.parse(localStorage.getItem("todos"));
+if (storedTodos) {
+    todos = storedTodos;
+    addList(todos);
+}
+
 addBtn.addEventListener("click", () => {
     addModal.classList.remove("hidden");
     overlay.classList.remove("hidden");
@@ -28,6 +35,7 @@ function newTodo(e) {
 
     todos.push(newTodoItem);
     addList(todos);
+    saveToLocalStorage();
     todoInput.value = "";
 }
 function addList(todos) {
@@ -66,6 +74,7 @@ function filterdTodos(str) {
     } else if (str == "compelete") {
         const filterResult = todos.filter((todo) => todo.isComplete == true);
         addList(filterResult);
+        saveToLocalStorage();
     }
 }
 
@@ -78,8 +87,11 @@ console.log(todoForm);
 function removeTodo(id) {
     todos = todos.filter((todo) => todo.id !== id);
     addList(todos);
+    saveToLocalStorage();
 }
-
+function saveToLocalStorage() {
+    localStorage.setItem("todos", JSON.stringify(todos));
+}
 function funcComplete(id) {
     todos.forEach((todo) => {
         if (todo.id === id) {
@@ -87,4 +99,5 @@ function funcComplete(id) {
         }
     });
     addList(todos);
+    saveToLocalStorage();
 }
