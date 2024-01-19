@@ -148,6 +148,8 @@ main .add-btn {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: unset;
+  cursor: pointer;
 }
 main .todos-list {
   padding: 20px;

@@ -33,6 +33,8 @@ main {
         display: flex;
         align-items: center;
         justify-content: center;
+        border: unset;
+        cursor: pointer;
     }
 
     .todos-list {
