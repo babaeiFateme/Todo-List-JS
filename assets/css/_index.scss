@@ -23,6 +23,11 @@ main {
         justify-content: space-between;
         flex-wrap: wrap;
         gap: 20px;
+        .time{
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
         .filter{
             display: flex;
             justify-content: center;
@@ -140,5 +145,8 @@ main {
                 gap: 20px;
             }
         }
+    }
+    .modal{
+        width: 96%;
     }
 }

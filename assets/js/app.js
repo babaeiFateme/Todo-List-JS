@@ -8,7 +8,34 @@ const closeBtn = document.querySelector(".close-btn");
 const addModal = document.querySelector(".add-modal");
 const editModal = document.querySelector(".edit-modal");
 const overlay = document.querySelector(".overlay");
+const timeBox = document.querySelector(".time");
 let todos = [];
+
+const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+];
+const currentDate = new Date();
+const day = currentDate.getDate();
+const monthIndex = currentDate.getMonth();
+const monthName = monthNames[monthIndex];
+const year = currentDate.getFullYear();
+
+timeBox.innerHTML = `<span class="fs-45">${day}</span>
+<div>
+    <div class="fs-15"> ${monthName}</div>
+    <div class="fs-15 text-light-gray">${year}</div>
+</div>`;
 
 const storedTodos = JSON.parse(localStorage.getItem("todos"));
 if (storedTodos) {
@@ -30,7 +57,7 @@ function newTodo(e) {
     e.preventDefault();
     let newTodoItem = {
         id: Date.now(),
-        title: todoInput.value,
+        title: todoInput.value.trim(),
         isComplete: false,
     };
 
@@ -100,7 +127,6 @@ function funcComplete(id) {
     addList(todos);
     saveToLocalStorage();
 }
-
 
 const editTodoInput = document.querySelector(".edit-todo-input");
 const saveEditBtn = document.querySelector(".save-edit-btn");

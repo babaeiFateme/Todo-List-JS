@@ -9,8 +9,9 @@
 
 $colors: (
     "primary" var(--clr-primary) var(--clr-white),
+    "light-gray" var(--clr-light-gray) var(--clr-white),
 );
 
 
-$fs: (13, 14, 15, 16, 17, 18, 20, 22, 24);
-$fw: (100, 200, 300, 400, 500, 600, 700, 800);
+$fs: (13, 14, 15, 16, 17, 18, 20, 22, 24,45);
+$fw: ( 300, 400, 500);

@@ -64,12 +64,8 @@
   font-size: 24px;
 }
 
-.fw-100 {
-  font-weight: 100;
-}
-
-.fw-200 {
-  font-weight: 200;
+.fs-45 {
+  font-size: 45px;
 }
 
 .fw-300 {
@@ -82,18 +78,6 @@
 
 .fw-500 {
   font-weight: 500;
-}
-
-.fw-600 {
-  font-weight: 600;
-}
-
-.fw-700 {
-  font-weight: 700;
-}
-
-.fw-800 {
-  font-weight: 800;
 }
 
 .btn-primary {
@@ -113,6 +97,25 @@
 
 .text-primary {
   color: var(--clr-primary) !important;
+}
+
+.btn-light-gray {
+  background-color: var(--clr-light-gray) !important;
+  color: var(--clr-white) !important;
+  padding: 0.75rem 1.5rem;
+}
+.btn-light-gray:hover, .btn-light-gray:active, .btn-light-gray:focus {
+  background-color: var(--clr-light-gray) !important;
+  color: var(--clr-white) !important;
+}
+
+.bg-light-gray {
+  background-color: var(--clr-light-gray) !important;
+  color: var(--clr-white) !important;
+}
+
+.text-light-gray {
+  color: var(--clr-light-gray) !important;
 }
 
 header {
@@ -139,6 +142,11 @@ main .header-box {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 20px;
+}
+main .header-box .time {
+  display: flex;
+  align-items: center;
+  gap: 3px;
 }
 main .header-box .filter {
   display: flex;
@@ -243,6 +251,9 @@ main .todos-list .todo-item .actions .btn:hover {
     flex-direction: column;
     gap: 20px;
   }
+  .modal {
+    width: 96%;
+  }
 }
 * {
   padding: 0;
@@ -258,10 +269,6 @@ body {
   font-family: "rubic";
   background-image: url("../../public/images/bg.jpg");
   background-repeat: repeat;
-  height: 100%;
-}
-
-.wrapper {
   height: 100%;
 }
 
