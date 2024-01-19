@@ -99,7 +99,7 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 700px;
+    width:min(100%,650px);
     background-color: white;
     padding: 20px 30px;
     border-radius: 5px;
@@ -139,6 +139,7 @@ main {
 }
 @media(max-width:768px){
     main{
+        padding: 10px;
         .todos-list{
             .todo-item{
                 flex-direction: column;

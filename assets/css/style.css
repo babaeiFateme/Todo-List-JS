@@ -207,7 +207,7 @@ main .todos-list .todo-item .actions .btn:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 700px;
+  width: min(100%, 650px);
   background-color: white;
   padding: 20px 30px;
   border-radius: 5px;
@@ -247,6 +247,9 @@ main .todos-list .todo-item .actions .btn:hover {
 }
 
 @media (max-width: 768px) {
+  main {
+    padding: 10px;
+  }
   main .todos-list .todo-item {
     flex-direction: column;
     gap: 20px;
@@ -282,4 +285,8 @@ img {
 
 .hidden {
   display: none;
+}
+
+.btn {
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

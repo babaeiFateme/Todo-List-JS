@@ -53,19 +53,31 @@ closeBtn.addEventListener("click", () => {
     overlay.classList.add("hidden");
 });
 
-function newTodo(e) {
-    e.preventDefault();
-    let newTodoItem = {
-        id: Date.now(),
-        title: todoInput.value.trim(),
-        isComplete: false,
-    };
+/**
+ * javascript comment
+ * @Date: 2024-01-19 21:45:48
+ * @Desc: add todo item in todos
+ */
+const newTodo = (e) => {
+    if (todoInput.value !== "") {
+        e.preventDefault();
+        let newTodoItem = {
+            id: Date.now(),
+            title: todoInput.value.trim(),
+            isComplete: false,
+        };
+        todos.push(newTodoItem);
+        addList(todos);
+        saveToLocalStorage();
+        todoInput.value = "";
+    }
+};
 
-    todos.push(newTodoItem);
-    addList(todos);
-    saveToLocalStorage();
-    todoInput.value = "";
-}
+/**
+ * javascript comment
+ * @Date: 2024-01-19 21:46:30
+ * @Desc: pass each todo in html
+ */
 function addList(todos) {
     let item = "";
     todos.forEach((todo) => {
@@ -78,15 +90,16 @@ function addList(todos) {
             <span>${todo.title}</span>
         </div>
             <div class="actions">
+            <button class="btn" onclick="editFunc(${todo.id})">
+            <i class="fas fa-edit fs-18"></i>
+            </button>
             <button class="btn btn-delete" id="${
                 todo.id
             }" onclick="removeTodo(${
             todo.id
         })"><i class="fas fa-trash fs-18"></i>
             </button>
-            <button class="btn" onclick="editFunc(${todo.id})">
-            <i class="fas fa-edit fs-18"></i>
-            </button>
+            
             </div>
         </li>
             `;
@@ -94,6 +107,11 @@ function addList(todos) {
     todoList.innerHTML = item;
 }
 
+/**
+ * javascript comment
+ * @Date: 2024-01-19 21:47:38
+ * @Desc:  filter todo with two item one all todos and completed rodo
+ */
 function filterdTodos(str) {
     if (str == "all") {
         addList(todos);
@@ -108,17 +126,30 @@ todoForm.addEventListener("submit", newTodo);
 allTaskBtn.addEventListener("click", () => filterdTodos("all"));
 compeleteBtn.addEventListener("click", () => filterdTodos("compelete"));
 
-console.log(todoForm);
-
-function removeTodo(id) {
+/**
+ * javascript comment
+ * @Date: 2024-01-19 21:48:24
+ * @Desc: remove todo with id  and save in local storage
+ */
+const removeTodo = (id) => {
     todos = todos.filter((todo) => todo.id !== id);
     addList(todos);
     saveToLocalStorage();
-}
-function saveToLocalStorage() {
+};
+/**
+ * javascript comment
+ * @Date: 2024-01-19 21:50:08
+ * @Desc: after each action , I call this function and save todos in local storage
+ */
+const saveToLocalStorage = () => {
     localStorage.setItem("todos", JSON.stringify(todos));
-}
-function funcComplete(id) {
+};
+/**
+ * javascript comment
+ * @Date: 2024-01-19 21:55:49
+ * @Desc: toggle todo complete checker
+ */
+const funcComplete = (id) => {
     todos.forEach((todo) => {
         if (todo.id === id) {
             todo.isComplete = !todo.isComplete;
@@ -126,11 +157,16 @@ function funcComplete(id) {
     });
     addList(todos);
     saveToLocalStorage();
-}
+};
 
 const editTodoInput = document.querySelector(".edit-todo-input");
 const saveEditBtn = document.querySelector(".save-edit-btn");
 
+/**
+ * javascript comment
+ * @Date: 2024-01-19 21:54:37
+ * @Desc: in this function we show modal , edit todo item and save in local storage
+ */
 const openEditModal = (id) => {
     const todoToEdit = todos.find((todo) => todo.id === id);
     if (todoToEdit) {
@@ -142,18 +178,12 @@ const openEditModal = (id) => {
             todoToEdit.title = editTodoInput.value;
             editModal.classList.add("hidden");
             overlay.classList.add("hidden");
-
             addList(todos);
             saveToLocalStorage();
         });
     }
 };
 
-function editFunc(id) {
+const editFunc = (id) => {
     openEditModal(id);
-}
-
-overlay.addEventListener("click", () => {
-    editModal.classList.add("hidden");
-    overlay.classList.add("hidden");
-});
+};
