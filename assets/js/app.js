@@ -91,7 +91,7 @@ function addList(todos) {
         </div>
             <div class="actions">
             <button class="btn" onclick="editFunc(${todo.id})">
-            <i class="fas fa-edit fs-18"></i>
+            <i class="fas fa-pen fs-18"></i>
             </button>
             <button class="btn btn-delete" id="${
                 todo.id

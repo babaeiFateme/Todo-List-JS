@@ -28,3 +28,9 @@
         color: $color1 !important;
     }
 }
+input[type="checkbox"] {
+    filter: hue-rotate(240deg);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;   
+}

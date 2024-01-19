@@ -5,6 +5,7 @@
   --clr-min-gray: #333;
   --clr-light-gray: #999;
   --clr-vLight-gray: #f7f7f7;
+  --clr-light-green:#16e145;
 }
 
 @font-face {
@@ -118,6 +119,13 @@
   color: var(--clr-light-gray) !important;
 }
 
+input[type=checkbox] {
+  filter: hue-rotate(240deg);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
 header {
   background-color: var(--clr-primary);
   border-radius: 0px 0px 40px 40px;
@@ -184,6 +192,9 @@ main .todos-list .todo-item {
 }
 main .todos-list .todo-item .title {
   color: var(clr-main-gray);
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 main .todos-list .todo-item .actions .btn {
   border: unset;
@@ -253,6 +264,7 @@ main .todos-list .todo-item .actions .btn:hover {
   main .todos-list .todo-item {
     flex-direction: column;
     gap: 20px;
+    align-items: start;
   }
   .modal {
     width: 96%;
