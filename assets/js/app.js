@@ -198,3 +198,4 @@ const updateEmptyBoxVisibility = () => {
         emptyBox.classList.remove("hidden");
     }
 };
+updateEmptyBoxVisibility();
