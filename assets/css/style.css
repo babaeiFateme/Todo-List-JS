@@ -226,6 +226,12 @@ main .todos-list .todo-item .actions .btn:hover {
   z-index: 5;
 }
 
+@media (max-width: 768px) {
+  main .todos-list .todo-item {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
 * {
   padding: 0;
   margin: 0;

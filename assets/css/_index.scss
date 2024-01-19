@@ -120,3 +120,13 @@ main {
     backdrop-filter: blur(1px);
     z-index: 5;
 }
+@media(max-width:768px){
+    main{
+        .todos-list{
+            .todo-item{
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    }
+}
