@@ -257,6 +257,12 @@ main .todos-list .todo-item .actions .btn:hover {
   z-index: 5;
 }
 
+.empty-box img {
+  max-width: 400px;
+  margin: auto;
+  display: block;
+}
+
 @media (max-width: 768px) {
   main {
     padding: 10px;

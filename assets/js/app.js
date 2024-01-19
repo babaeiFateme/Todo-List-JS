@@ -9,6 +9,7 @@ const addModal = document.querySelector(".add-modal");
 const editModal = document.querySelector(".edit-modal");
 const overlay = document.querySelector(".overlay");
 const timeBox = document.querySelector(".time");
+const emptyBox = document.querySelector(".empty-box");
 let todos = [];
 
 const monthNames = [
@@ -119,6 +120,7 @@ function filterdTodos(str) {
         const filterResult = todos.filter((todo) => todo.isComplete == true);
         addList(filterResult);
         saveToLocalStorage();
+        updateEmptyBoxVisibility();
     }
 }
 
@@ -143,6 +145,7 @@ const removeTodo = (id) => {
  */
 const saveToLocalStorage = () => {
     localStorage.setItem("todos", JSON.stringify(todos));
+    updateEmptyBoxVisibility();
 };
 /**
  * javascript comment
@@ -186,4 +189,12 @@ const openEditModal = (id) => {
 
 const editFunc = (id) => {
     openEditModal(id);
+};
+
+const updateEmptyBoxVisibility = () => {
+    if (todos.length !== 0) {
+        emptyBox.classList.add("hidden");
+    } else {
+        emptyBox.classList.remove("hidden");
+    }
 };

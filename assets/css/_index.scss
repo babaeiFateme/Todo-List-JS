@@ -23,16 +23,19 @@ main {
         justify-content: space-between;
         flex-wrap: wrap;
         gap: 20px;
-        .time{
+
+        .time {
             display: flex;
             align-items: center;
             gap: 3px;
         }
-        .filter{
+
+        .filter {
             display: flex;
             justify-content: center;
             gap: 20px;
-            button{
+
+            button {
                 background-color: unset;
                 border: unset;
                 cursor: pointer;
@@ -102,28 +105,32 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width:min(100%,650px);
+    width: min(100%, 650px);
     background-color: white;
     padding: 20px 30px;
     border-radius: 5px;
     box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
     z-index: 10;
-    .subtitle{
+
+    .subtitle {
         margin: 20px 0;
     }
-    input{
+
+    input {
         margin-bottom: 20px;
         width: 100%;
         padding: 10px 5px;
         border: unset;
         border-bottom: 1px solid var(--clr-light-gray);
-       
+
     }
-    .actions{
+
+    .actions {
         display: flex;
         justify-content: end;
         gap: 10px;
-        button{
+
+        button {
             background-color: unset;
             border: unset;
         }
@@ -140,18 +147,29 @@ main {
     backdrop-filter: blur(1px);
     z-index: 5;
 }
-@media(max-width:768px){
-    main{
+
+.empty-box {
+    img {
+        max-width: 400px;
+        margin: auto;
+        display: block;
+    }
+}
+
+@media(max-width:768px) {
+    main {
         padding: 10px;
-        .todos-list{
-            .todo-item{
+
+        .todos-list {
+            .todo-item {
                 flex-direction: column;
                 gap: 20px;
                 align-items: start;
             }
         }
     }
-    .modal{
+
+    .modal {
         width: 96%;
     }
 }
