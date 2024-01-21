@@ -79,6 +79,8 @@ const newTodo = (e) => {
  * @Date: 2024-01-19 21:46:30
  * @Desc: pass each todo in html
  */
+//generate list 
+// not map for all item
 function addList(todos) {
     let item = "";
     todos.forEach((todo) => {
